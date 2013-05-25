@@ -1,4 +1,4 @@
 bootstrap_tests
 ===============
 
-bootstrap tests &amp; learn
+bootstrap SpringMVC tests &amp; learn
