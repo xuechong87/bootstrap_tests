@@ -5,15 +5,17 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.xuechong.bootstraptests.dao.TopicDao;
 import com.xuechong.bootstraptests.model.Topic;
 import com.xuechong.bootstraptests.service.TopicService;
 
 @Service
+@Transactional
 public class TopicServiceImpl implements TopicService{
 
-	@Resource
+	@Resource(name="topicDao")
 	private TopicDao topicDao;
 	@Override
 	public void add(Topic t) {
@@ -37,7 +39,7 @@ public class TopicServiceImpl implements TopicService{
 
 	@Override
 	public Topic findById(String id) {
-		return this.topicDao.;
+		return this.topicDao.findById(id);
 	}
 
 }

@@ -2,6 +2,7 @@ package com.xuechong.bootstraptests.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,14 +31,16 @@ public class MainController {
 		List<Topic> topicList = this.topicService.list(Integer.parseInt(page));
 		modelMap.put("topicList", topicList);
 		modelMap.put("totalPage", this.topicService.totalPage());
+		modelMap.put("curPage", page);
 		return "pages/list.jsp";
 	}
 	
 	@RequestMapping("/topic/add")
 	public String add(Topic topic,ModelMap modelMap){
 		topic.setCreateDate(new Date());
+		topic.setPicPath(String.valueOf(new Random().nextInt(6) +1));
 		this.topicService.add(topic);
-		return this.list("1",modelMap);
+		return "redirect:/main/topic/list/1";
 	}
 	
 	@RequestMapping("/topic/{id}/{page}")
@@ -52,10 +55,10 @@ public class MainController {
 	}
 	
 	@RequestMapping("/topic/comment/add")
-	public String addComment(Comment comment,ModelMap modelMap){
+	public String addComment(Comment comment){
 		comment.setCreateDate(new Date());
 		this.commentService.addComment(comment);
-		return this.viewTopic(comment.getTopicId(), "1",modelMap);
+		return "redirect:/main/topic/ "+comment.getTopicId()+"/1";
 	}
 	
 }

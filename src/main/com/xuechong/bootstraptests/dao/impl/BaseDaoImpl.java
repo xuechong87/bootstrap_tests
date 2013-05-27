@@ -56,7 +56,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 		Criteria cri = this.getSession().createCriteria(persistentClass);
 		cri.setProjection(Projections.rowCount());
 		Integer totalCount = Integer.parseInt(cri.uniqueResult().toString());
-		return totalCount%PAGE_SIZE==0?totalCount/PAGE_SIZE:(totalCount/PAGE_SIZE)-1;
+		return totalCount%PAGE_SIZE==0?totalCount/PAGE_SIZE:(totalCount/PAGE_SIZE)+1;
 	}
 
 	@Override

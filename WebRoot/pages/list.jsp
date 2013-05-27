@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;utf-8"
+    pageEncoding="utf-8"%>
 <%@ include file="common.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,205 +25,62 @@
 		</ul>
 	</nav>
 	
+	<c:forEach items="${topicList}" var="topic" varStatus="i">
+		<c:if test="${i.index==0 or i.index==3}">
+		<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12">
 				<ul class="thumbnails">
-					<li class="span4" id="li1">
+		</c:if>
+				<li class="span4" id="li1">
 						<div class="thumbnail">
-							<img alt="" src="${ctxPath}/img/1.jpg" />
+							<img alt="" src="${ctxPath}/img/${topic.picPath }.jpg" />
 							<div class="caption">
 								<h3>
-									Mizuki Nana
+									<a href="${ctxPath }/main/topic/${topic.id}/1">${topic.title }</a>
 								</h3>
 								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img alt="" src="../img/3.jpg" />
-							<div class="caption">
-								<h3>
-									Mizuki Nana
-								</h3>
-								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img alt="" src="../img/4.jpg" />
-							<div class="caption">
-								<h3>
-									Mizuki Nana
-								</h3>
-								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					
-				</ul>
-			</div>
-			
-		</div>
-		
-		
-		<div class="row-fluid">
-			
-			<div class="span12">
-				<ul class="thumbnails">
-					<li class="span4">
-						<div class="thumbnail">
-							<img alt="" src="../img/5.jpg" />
-							<div class="caption">
-								<h3>
-									Mizuki Nana
-								</h3>
-								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img alt="" src="../img/6.jpg" />
-							<div class="caption">
-								<h3>
-									Mizuki Nana
-								</h3>
-								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img alt="" src="../img/2.jpg" />
-							<div class="caption">
-								<h3>
-									<a href="list.html">Mizuki Nana</a>
-								</h3>
-								<p>
-									Born in Niihama, Ehime, Japan, she began to train in enka when she was five years old.In 1993, 
-									she released Compact Cassette single "Tsugazakura" (つがざくら?, lit. "Phyllodoce Nipponica") 
-									as "Nana Kondo".However, she passed the audition of game Noël: La Neige and became a voice 
-									actress.
+									${topic.content }
 								</p>
 								<p>
 									
-									<div class="btn-group">
-										 <button class="btn">Action</button> <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="#">Action</a>
-											</li>
-											<li>
-												<a href="#">Another action</a>
-											</li>
-											<li>
-												<a href="#">Something else here</a>
-											</li>
-											<li class="divider">
-											</li>
-											<li class="dropdown-submenu">
-												 <a tabindex="-1" href="#">More options</a>
-												<ul class="dropdown-menu">
-													<li>
-														<a href="#">Action</a>
-													</li>
-													<li>
-														<a href="#">Another action</a>
-													</li>
-													<li>
-														<a href="#">Something else here</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</div>
 								</p>
 							</div>
 						</div>
 					</li>
-					
+		<c:if test="${i.index==2 or i.index==6}">
 				</ul>
 			</div>
-			
 		</div>
-	</div>
-
-
+		</div>
+		</c:if>
+	</c:forEach>
+	
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="pagination pagination-large pagination-centered">
 					<ul>
+						<c:if test="${curPage >1}">
 						<li>
-							<a href="#">Prev</a>
+							<a href="${ctxPath }/main/topic/list/${curPage-1}">Prev</a>
 						</li>
+						</c:if>
 						<li>
-							<a href="#">1</a>
+							<a href="#">${curPage }</a>
 						</li>
+						<c:if test="${curPage < totalPage}">
 						<li>
-							<a href="#">2</a>
+							<a href="${ctxPath }/main/topic/list/${curPage+1}">Next</a>
 						</li>
-						<li>
-							<a href="#">3</a>
-						</li>
-						<li>
-							<a href="#">4</a>
-						</li>
-						<li>
-							<a href="#">5</a>
-						</li>
-						<li>
-							<a href="#">Next</a>
-						</li>
+						</c:if>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-    <script src="../basic/jquery-1.9.1.min.js"></script>
-    <script src="../basic/bootstrap.min.js"></script>
+    <script src="${ctxPath }/basic/jquery-1.9.1.min.js"></script>
+    <script src="${ctxPath }/basic/bootstrap.min.js"></script>
   	</body>
 </html>
