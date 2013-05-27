@@ -24,8 +24,6 @@ public class MainController {
 	@Autowired(required=true)
 	private TopicService topicService;
 	
-	
-
 	@RequestMapping("/topic/list/{page}")
 	public String list(@PathVariable("page") String page,ModelMap modelMap){
 		List<Topic> topicList = this.topicService.list(Integer.parseInt(page));
@@ -36,7 +34,7 @@ public class MainController {
 	}
 	
 	@RequestMapping("/topic/add")
-	public String add(Topic topic,ModelMap modelMap){
+	public String add(Topic topic){
 		topic.setCreateDate(new Date());
 		topic.setPicPath(String.valueOf(new Random().nextInt(6) +1));
 		this.topicService.add(topic);
