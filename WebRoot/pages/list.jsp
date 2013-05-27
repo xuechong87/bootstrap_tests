@@ -1,86 +1,36 @@
-<!-- 啊 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="common.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 	   	<title>content</title>
 	   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	   	<!-- Bootstrap -->
-	    
-	   	<link href="../basic/bootstrap.css" rel="stylesheet" media="screen">
-	   	<link href="../basic/bootstrap-responsive.css" rel="stylesheet" media="screen">
+	   	<link href="${ctxPath }/basic/bootstrap.css" rel="stylesheet" media="screen">
+	   	<link href="${ctxPath }/basic/bootstrap-responsive.css" rel="stylesheet" media="screen">
+		<link href="${ctxPath }/nav/nav.css" rel="stylesheet" media="screen">
+		<!--[if lt IE 9]>
+			<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		
-		<script type="text/javascript">
-			function deleteDoc(docId){
-				$("#" + docId).hide();
-			}
-		</script>
   	</head>
   	<body>
   	
-  	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="navbar">
-					<div class="navbar-inner">
-						<div class="container-fluid">
-							<a data-target=".navbar-responsive-collapse" 
-							 data-toggle="collapse" 
-							 class="btn btn-navbar collapsed">
-								 <span class="icon-bar"></span>
-								 <span class="icon-bar"></span><span class="icon-bar"></span>
-							</a> 
-							<a href="#" class="brand">标题</a>
-							<div class="nav-collapse navbar-responsive-collapse in collapse">
-								<ul class="nav">
-									<li class="active">
-										<a href="#">首页</a>
-									</li>
-									<li>
-										<a href="add.html">新增</a>
-									</li>
-									<li class="dropdown">
-										 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-										 下拉
-										 <strong class="caret"></strong>
-										 </a>
-										<ul class="dropdown-menu">
-											<li>
-												<a href="#">Action</a>
-											</li>
-											<li>
-												<a href="#">Another action</a>
-											</li>
-											<li>
-												<a href="#">Something else here</a>
-											</li>
-											<li class="divider">
-											</li>
-											<li class="nav-header">
-												Nav header
-											</li>
-											<li>
-												<a href="#">Separated link</a>
-											</li>
-											<li>
-												<a href="#">One more separated link</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  	<nav class="nav">
+		<ul>
+			<li class="current"><a href="#">列表</a></li>
+			<li><a href="${ctxPath }/pages/add.jsp">新增</a></li>
+		</ul>
+	</nav>
 	
 		<div class="row-fluid">
-			
 			<div class="span12">
 				<ul class="thumbnails">
 					<li class="span4" id="li1">
 						<div class="thumbnail">
-							<img alt="" src="../img/1.jpg" />
+							<img alt="" src="${ctxPath}/img/1.jpg" />
 							<div class="caption">
 								<h3>
 									Mizuki Nana
@@ -140,6 +90,8 @@
 			</div>
 			
 		</div>
+		
+		
 		<div class="row-fluid">
 			
 			<div class="span12">
