@@ -58,5 +58,9 @@ public class MainController {
 		this.commentService.addComment(comment);
 		return "redirect:/main/topic/ "+comment.getTopicId()+"/1";
 	}
-	
+	@RequestMapping("/chart")
+	public String chart(ModelMap modelMap){
+		modelMap.put("topics", this.topicService.findTop(5));
+		return "pages/chart.jsp";
+	}
 }

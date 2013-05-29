@@ -27,7 +27,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	@Autowired(required=true)
 	protected SessionFactory sessionFactory;
 	
-	protected Session getSession(){
+	public Session getSession(){
 		return this.sessionFactory.getCurrentSession();
 	}
 	

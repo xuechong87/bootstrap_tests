@@ -31,6 +31,8 @@ public class Topic implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	
+	private Integer commentCount;
+	
 	public String getId() {
 		return id;
 	}
@@ -60,6 +62,12 @@ public class Topic implements Serializable{
 	}
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
+	}
+	public Integer getCommentCount() {
+		return commentCount;
+	}
+	public void setCommentCount(Integer commentCount) {
+		this.commentCount = commentCount;
 	}
 	
 }

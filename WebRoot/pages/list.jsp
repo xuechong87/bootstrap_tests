@@ -21,6 +21,7 @@
 		<ul>
 			<li class="current"><a href="#">列表</a></li>
 			<li><a href="${ctxPath }/pages/add.jsp">新增</a></li>
+			<li ><a href="${ctxPath }/main/chart">统计</a></li>
 		</ul>
 	</nav>
 	

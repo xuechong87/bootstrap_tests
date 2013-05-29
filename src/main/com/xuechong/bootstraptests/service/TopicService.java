@@ -11,4 +11,5 @@ public interface TopicService {
 	public int totalPage();
 	public void remove(String id);
 	public Topic findById(String id);
+	public List<Topic> findTop(int top);
 }
