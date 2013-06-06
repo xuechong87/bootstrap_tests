@@ -16,7 +16,7 @@
 		<div class="row-fluid">
 			<div class="span12" >
 				<div class="navbar navbar-fixed-top">
-					<div class="navbar-inner ">
+					<div class="navbar-inner">
 						<div class="container-fluid">
 							 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed">
 								<span class="icon-bar"></span>
@@ -62,8 +62,7 @@
 			</div>
 		</div>
 	</div>
-	
-	<br/>
+	<br>
 	<div class="container-fluid">
 		
 		<div class="row-fluid">
@@ -71,61 +70,13 @@
 			<div class="span2 " >
 			
 				<h3 class="visible-desktop visible-tablet">&nbsp;</h3>
-				
-				<div class="accordion" id="accordion2">
-					<div class="accordion-group">
-						<div class="accordion-heading ">
-							<a class="accordion-toggle btn btn-info dropdown-toggle" data-toggle="collapse" data-parent="#accordion2" 
-							href="#collapseOne" >
-							一年级
-							</a>
-						</div>
-						<div id="collapseOne" class="accordion-body collapse">
-							<div class="accordion-inner">
-								<ul class="nav">
-									<li><a href="#">一班</a><br/></li>
-									<li><a href="#">二班</a><br/></li>
-									<li><a href="#">三班</a><br/></li>
-									<li><a href="#">四班</a><br/></li>
-									<li><a href="#">五班</a><br/></li>
-									<li><a href="#">六班</a><br/></li>
-									<li><a href="#">七班</a><br/></li>
-									<li><a href="#">八班</a><br/></li>
-									<li><a href="#">九班</a><br/></li>
-									<li><a href="#">十班</a><br/></li>
-									<li><a href="#">十一班</a><br/></li>
-									<li><a href="#">十二班</a><br/></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle btn btn-info dropdown-toggle" data-toggle="collapse" data-parent="#accordion2" 
-							href="#collapseTwo" >
-							二年级
-							</a>
-						</div>
-						<div id="collapseTwo" class="accordion-body collapse">
-							<div class="accordion-inner">
-								<ul class="nav">
-									<li><a href="#">一班</a><br/></li>
-									<li><a href="#">二班</a><br/></li>
-									<li><a href="#">三班</a><br/></li>
-									<li><a href="#">四班</a><br/></li>
-									<li><a href="#">五班</a><br/></li>
-									<li><a href="#">六班</a><br/></li>
-									<li><a href="#">七班</a><br/></li>
-									<li><a href="#">八班</a><br/></li>
-									<li><a href="#">九班</a><br/></li>
-									<li><a href="#">十班</a><br/></li>
-									<li><a href="#">十一班</a><br/></li>
-									<li><a href="#">十二班</a><br/></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+				<form class="form-search">
+				  <div class="input-append">
+					<input type="text" class="span9 search-query typeahead" 
+					data-source="['aaaaaaaa','bbbbb','ccccc','ddddddd','eeeeeeeee']" />
+					<button type="submit" class="btn btn-info">查询</button>
+				  </div>
+				 </form>
 			</div>
 			
 			<div class="span8">
@@ -263,11 +214,11 @@
 			</div>
 		</div>
 	</div>
-	 <hr>
-	<footer>
-        <p>&copy; Company 2013</p>
-      </footer>
     <script src="../basic/jquery-1.9.1.min.js"></script>
     <script src="../basic/bootstrap.min.js"></script>
+	<script type="text/javascript">
+				$('.typeahead').typeahead();
+				
+	</script>
   	</body>
 </html>
