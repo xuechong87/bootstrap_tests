@@ -11,59 +11,56 @@
 	
   	</head>
   	<body>
-	
-  	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12" >
-				<div class="navbar navbar-fixed-top">
-					<div class="navbar-inner ">
-						<div class="container-fluid">
-							 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed">
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span><span class="icon-bar"></span>
+	<!-- 这里是页头可以在单独文件引入-->
+  	
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span><span class="icon-bar"></span>
+				 </a>
+				 <a href="#" class="brand">课程表</a>
+				<div class="nav-collapse navbar-responsive-collapse collapse">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">查看课程</a>
+						</li>
+						<li>
+							<a href="#">数据录入</a>
+						</li>
+						<li>
+							<a href="#">编辑课程</a>
+						</li>
+						<li>
+							<a href="#">权限管理</a>
+						</li>
+					</ul>
+					<ul class="nav pull-right">
+						<li class="divider-vertical">
+						</li>
+						<li class="dropdown">
+							 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							 操作<strong class="caret"></strong>
 							 </a>
-							 <a href="#" class="brand">课程表</a>
-							<div class="nav-collapse navbar-responsive-collapse collapse">
-								<ul class="nav">
-									<li class="active">
-										<a href="#">查看课程</a>
-									</li>
-									<li>
-										<a href="#">数据录入</a>
-									</li>
-									<li>
-										<a href="#">编辑课程</a>
-									</li>
-									<li>
-										<a href="#">权限管理</a>
-									</li>
-								</ul>
-								<ul class="nav pull-right">
-									<li class="divider-vertical">
-									</li>
-									<li class="dropdown">
-										 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-										 操作<strong class="caret"></strong>
-										 </a>
-										<ul class="dropdown-menu well">
-											<li>
-												<a href="#">退出</a>
-											</li>
-											
-										</ul>
-									</li>
-								</ul>
-							</div>
-							
-						</div>
-					</div>
-					
+							<ul class="dropdown-menu well">
+								<li>
+									<a href="#">退出</a>
+								</li>
+								
+							</ul>
+						</li>
+					</ul>
 				</div>
+				
 			</div>
 		</div>
+		
 	</div>
+	<br/>		
+	<!-- 这里是页头可以在单独文件引入 end-->
 	
-	<br/>
+
 	<div class="container-fluid">
 		
 		<div class="row-fluid">
@@ -134,7 +131,7 @@
 					请更新缓存
 				</div>
 			</div>
-			
+			<!--这里是课程表 -->
 			<div class="span8">
 				<h3 class="muted text-center">X年级X班</h3>
 				<table class="table table-hover table-condensed table-bordered">
@@ -265,21 +262,20 @@
 					</tbody>
 				</table>
 			</div>
-			
+			<!--这里是课程表 end -->
 			<div class="span1">
 			</div>
 		</div>
 	</div>
 	
+	<!--这里是页脚,可以在单独文件引入-->
 	<hr>
 	<footer>
         <p>&copy; china-nbc 2013</p>
     </footer>
     <script src="../basic/jquery-1.9.1.min.js"></script>
     <script src="../basic/bootstrap.min.js"></script>
-	<script>
-		
-	</script>
+	<!--这里是页脚,可以在单独文件引入 end-->
 	
   	</body>
 </html>
