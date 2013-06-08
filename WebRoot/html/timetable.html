@@ -57,7 +57,7 @@
 		</div>
 		
 	</div>
-	<br/>		
+	<br/>	<br/>	
 	<!-- 这里是页头可以在单独文件引入 end-->
 	
 
@@ -249,18 +249,28 @@
 							<td>
 								语
 							</td>
-							<td>
+							<td data-tea="英语老师"  >
 								英
 							</td>
-							<td>
+							<td data-tea="物理老师"  >
 								物
 							</td>
-							<td>
+							<td data-tea="物理老师" >
 								物
 							</td>
 						</tr>
 					</tbody>
 				</table>
+				<!--这里任课教师信息相关 -->
+				<div class="alert alert-info" id="teaDiv" style="display:none;">
+				  <strong id="teaName"></strong>
+				</div>
+				
+				<div class="alert alert-info hidden-desktop" id="teaDiv" >
+				<a class="close" data-dismiss="alert" href="#">&times;</a>
+				  *点击课程可以查看任课教师
+				</div>
+				<!--这里任课教师信息相关 end-->
 			</div>
 			<!--这里是课程表 end -->
 			<div class="span1">
@@ -276,6 +286,21 @@
     <script src="../basic/jquery-1.9.1.min.js"></script>
     <script src="../basic/bootstrap.min.js"></script>
 	<!--这里是页脚,可以在单独文件引入 end-->
-	
+	<script>
+		
+		$("td").hover(
+		  function () {
+			var teaName = $(this).attr('data-tea');
+			if($.trim(teaName)!=''){
+				$("#teaName").html("任课教师:" + teaName);
+				$('#teaDiv').fadeIn();
+			}
+		  },
+		  function () {
+			$('#teaDiv').hide();
+		  }
+		);
+		
+	</script>
   	</body>
 </html>
