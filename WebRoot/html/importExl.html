@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	   	<title>timetable</title>
+	   	<title>importExl</title>
 	   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	   	<!-- Bootstrap -->
 	    
@@ -23,10 +23,10 @@
 				 <a href="#" class="brand">课程表</a>
 				<div class="nav-collapse navbar-responsive-collapse collapse">
 					<ul class="nav">
-						<li class="active">
+						<li >
 							<a href="#">查看课程</a>
 						</li>
-						<li>
+						<li class="active">
 							<a href="#">数据录入</a>
 						</li>
 						<li>
@@ -126,153 +126,48 @@
 				
 				<div class="alert alert-info" id="alertInfo">
 					<a class="close" data-dismiss="alert" href="#">&times;</a>
-					<a class="btn btn-info btn-mini" href="#">更新缓存</a>
+					<a class="btn btn-info btn-mini" href="#"><i class=" icon-refresh icon-white"></i>&nbsp;更新缓存</a>
 					*如果您看到的班级列表和实际情况不相符,
 					请更新缓存
 				</div>
 			</div>
-			<!--这里是课程表 -->
+			<!--这里是导入表单 -->
 			<div class="span8">
 				<h3 class="muted text-center">X年级X班</h3>
-				<table class="table table-hover table-condensed table-bordered">
-					<thead >
-						<tr >
-							<th >
-								课/周
-							</th>
-							<th>
-								一
-							</th>
-							<th>
-								二
-							</th>
-							<th>
-								三
-							</th>
-							<th>
-								四
-							</th>
-							<th>
-								五
-							</th>
-							
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								1
-							</td>
-							<td>
-								数
-							</td>
-							<td>
-								语
-							</td>
-							<td>
-								英
-							</td>
-							<td>
-								物
-							</td>
-							<td>
-								物
-							</td>
-						</tr>
-						<tr class="info">
-							<td>
-								2
-							</td>
-							<td>
-								数
-							</td>
-							<td>
-								语
-							</td>
-							<td>
-								英
-							</td>
-							<td>
-								物
-							</td>
-							<td>
-								物
-							</td>
-						</tr>
-						<tr>
-							<td>
-								3
-							</td>
-							<td>
-								数
-							</td>
-							<td>
-								语
-							</td>
-							<td>
-								英
-							</td>
-							<td>
-								物
-							</td>
-							<td>
-								物
-							</td>
-						</tr>
-						<tr class="info">
-							<td>
-								4
-							</td>
-							<td>
-								数
-							</td>
-							<td>
-								语
-							</td>
-							<td>
-								英
-							</td>
-							<td>
-								物
-							</td>
-							<td>
-								物
-							</td>
-						</tr>
-						<tr>
-							<td>
-								5
-							</td>
-							<td>
-								数
-							</td>
-							<td>
-								语
-							</td>
-							<td data-tea="英语老师"  >
-								英
-							</td>
-							<td data-tea="物理老师"  >
-								物
-							</td>
-							<td data-tea="物理老师" >
-								物
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<!--这里任课教师信息相关 -->
-				<div class="alert alert-info" id="teaDiv" style="display:none;">
-				  <strong id="teaName"></strong>
+				<form>
+				<div class="control-group well">
+					
+					
+					<div class="offset1" >
+						<i class="icon-folder-open" > </i> 
+						<input class="" id="fileInput" type="file" >
+						<input type="submit" class="btn btn-success" value="上传"/>
+						<div class="btn-group">
+							<a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+								Excel模板
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">导入数据模板</a>
+								</li>
+								<li>
+									<a href="#">标准课程名称</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
 				</div>
+				</form>
 				
-				<div class="alert alert-info hidden-desktop" id="teaDiv" >
-				<a class="close" data-dismiss="alert" href="#">&times;</a>
-				  *点击课程可以查看任课教师
+				<div class="alert alert-error" >
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+					<h4>已有数据!</h4>
+					X年级X班已有数据,如果再次导入将会覆盖原有内容
 				</div>
-				<!--这里任课教师信息相关 end-->
 			</div>
-			<!--这里是课程表 end -->
+			<!--这里是导入表单 end -->
 			<div class="span1">
 			</div>
 		</div>
@@ -288,18 +183,12 @@
 	<!--这里是页脚,可以在单独文件引入 end-->
 	<script>
 		
-		$("td").hover(
-		  function () {
-			var teaName = $(this).attr('data-tea');
-			if($.trim(teaName)!=''){
-				$("#teaName").html("任课教师:" + teaName);
-				$('#teaDiv').fadeIn();
-			}
-		  },
-		  function () {
-			$('#teaDiv').hide();
-		  }
-		);
+		$('#fileInput').popover({
+			content:'上传格式只限xls,最大10m',
+			placement:'top',
+			trigger:'hover'
+		});
+		
 		
 	</script>
   	</body>
