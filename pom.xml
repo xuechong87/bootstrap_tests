@@ -245,5 +245,10 @@
 		    <artifactId>hibernate-core</artifactId>  
 		    <version>4.1.9.Final</version>  
 		</dependency>
+		<dependency>
+			<groupId>org.python</groupId>
+			<artifactId>jython</artifactId>
+			<version>2.7-b1</version>
+		</dependency>
 	</dependencies>
 </project>
