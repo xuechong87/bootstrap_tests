@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,7 +23,7 @@ public class MainController {
 	
 	@Autowired(required=true)
 	private CommentService commentService;
-	@Autowired(required=true)
+	@Resource(name="pyTopicService")
 	private TopicService topicService;
 	
 	@RequestMapping("/topic/list/{page}")
