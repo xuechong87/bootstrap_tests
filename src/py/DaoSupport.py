@@ -8,3 +8,12 @@ class DaoSupport():
 
     def getIndex(self,x):
         return  x > 0 and (x-1)*6 or 0
+    
+    
+    def add(self,entity):
+        """
+        if you put this method in the super class 
+        it will not be executed....why?
+        """
+        print "\n\n\nadd\n\n\n"
+        self.getSession().save(entity)

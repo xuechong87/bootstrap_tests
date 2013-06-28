@@ -6,7 +6,7 @@ from DaoSupport import DaoSupport
 class TopicService(com.xuechong.bootstraptests.service.TopicService,DaoSupport):
     
     logger = Logger.getLogger("TopicService py Impl")
-    startIndex = lambda x : x > 0 and (x-1)*6 or 0
+    startIndex = lambda x : x > 0 and ((x-1)*6) or 0
     
     def __init__(self):
         """public TopicServie()"""
@@ -14,9 +14,12 @@ class TopicService(com.xuechong.bootstraptests.service.TopicService,DaoSupport):
             self.logger.info(str(type(self)) + "init ")
         print str(type(self)) + "init "
         
-    def add(self,topic):
-        self.getSession().save(topic)
-        print "py add"
+    def add(self,entity):
+        """
+        if you put this method in the super class 
+        it will not be executed....why?
+        """
+        self.getSession().save(entity)
         
     def list(self,page):
         hql = "FROM Topic ORDER BY createDate DESC"
@@ -26,8 +29,8 @@ class TopicService(com.xuechong.bootstraptests.service.TopicService,DaoSupport):
         return query.list()
     
     def totalPage(self):
-        print "py totalPage"
-        return 100
+        rows = self.getSession().createQuery("SELECT COUNT(t.id) FROM Topic t").uniqueResult()
+        return rows%6!=0 and (rows/6+1) or rows/6
     
     def remove(self,id):
         print "py remove " + id
