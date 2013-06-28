@@ -5,7 +5,6 @@ jpy tests
 
 import java.lang.Object
 
-
 class JPYTests(java.lang.Object):
     
     def __init__(self):  
@@ -17,7 +16,7 @@ class JPYTests(java.lang.Object):
         out.println("this is py speaking")
         return
     
-if __name__=="__main__":
+if __name__ == "__main__":
     test = JPYTests()
     test.say()
     

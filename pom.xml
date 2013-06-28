@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
-		<sourceDirectory>src/main</sourceDirectory>
+		<sourceDirectory>src/main,src/py</sourceDirectory>
 		<testSourceDirectory>src/test</testSourceDirectory>
 		<outputDirectory>build/classes</outputDirectory>
 		<testOutputDirectory>build/test-classes</testOutputDirectory>
