@@ -1,0 +1,19 @@
+<html>
+
+<head>
+<script language='javascript'>
+function test(){
+	var regex = /^ +$/;
+	var reg = new RegExp(document.getElementById('reg').value);
+	alert(reg.test(document.getElementById('test').value))
+}
+</script>
+</head>
+<body>
+
+<input type="text" id="reg" />reg
+<br/>
+<input type="text" id="test" />test
+<input type="button" value="test" onclick="test();"/>
+</body>
+</html>
